@@ -71,6 +71,9 @@ dependencies:
   # localization
   intl: ^0.18.0
 
+  # Clevertap
+  clevertap_plugin: 1.7.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

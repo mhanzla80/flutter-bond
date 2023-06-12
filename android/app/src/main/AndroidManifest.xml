@@ -1,8 +1,20 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="ps.app.bond">
+
+    <!-- Required to allow the app to send events and user profile information -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <!-- Recommended so that CleverTap knows when to attempt a network call -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+
+    <permission android:name="com.clevertap.starter.permission.C2D_MESSAGE"
+        android:protectionLevel="signature"/>
+
    <application
         android:label="bond"
-        android:name="${applicationName}"
+        android:name="com.example.famcare.BondApplication"
         android:icon="@mipmap/launcher_icon">
         <activity
             android:name=".MainActivity"
@@ -47,5 +59,18 @@
            android:name="com.google.firebase.messaging.default_notification_channel"
            android:resource="@string/channel" />
 
+       <meta-data
+           android:name="CLEVERTAP_ACCOUNT_ID"
+           android:value="@string/clevertap_account_id"/>
+       <meta-data
+           android:name="CLEVERTAP_TOKEN"
+           android:value="@string/clevertap_account_token"/>
+       <!-- IMPORTANT: To force use Google AD ID to uniquely identify  users, use the following meta tag. GDPR mandates that if you are using this tag, there is prominent disclousure to your end customer in their application. Read more about GDPR here - https://clevertap.com/blog/in-preparation-of-gdpr-compliance/ -->
+       <meta-data
+           android:name="CLEVERTAP_USE_GOOGLE_AD_ID"
+           android:value="1"/>
+       <meta-data
+           android:name="CLEVERTAP_REGION"
+           android:value="mec1"/>
     </application>
 </manifest>
