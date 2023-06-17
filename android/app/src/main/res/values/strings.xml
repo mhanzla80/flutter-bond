@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="channel">Bond</string>
-    <string name="clevertap_account_id" >Add your account id</string>
-    <string name="clevertap_account_token">Add your account token</string>
+    <string name="clevertap_account_id" >TEST-754-956-686Z</string>
+    <string name="clevertap_account_token">TEST-65c-45a</string>
 </resources>

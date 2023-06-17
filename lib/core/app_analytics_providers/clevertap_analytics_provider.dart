@@ -1,19 +1,24 @@
 import 'package:bond_core/core.dart';
+import 'package:clevertap_plugin/clevertap_plugin.dart';
 
-class CleverTapAnalyticsProvider extends AnalyticsProvider{
+class CleverTapAnalyticsProvider extends AnalyticsProvider {
   @override
   void logEvent(AnalyticsEvent event) {
-    // TODO: implement logEvent
+    if (event.key != null) {
+      final String eventKey = event.key!.toLowerCase().replaceAll(' ', '_');
+      CleverTapPlugin.recordEvent(eventKey, event.params);
+    }
   }
 
   @override
   void setUserAttributes(Map<String, dynamic> attributes) {
-    // TODO: implement setUserAttributes
+    CleverTapPlugin.profileSet(attributes);
   }
 
   @override
   void setUserId(int userId) {
-    // TODO: implement setUserId
+    CleverTapPlugin.profileSet({
+      'user_id': userId,
+    });
   }
-
 }
