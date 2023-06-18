@@ -1,4 +1,5 @@
 import 'package:bond/core/app_notification_providers.dart';
+import 'package:bond/core/notifications/push_notifications_providers/clevertap_push_notification_provider.dart';
 import 'package:bond_core/core.dart';
 
 class NotificationConfig {
@@ -10,7 +11,12 @@ class NotificationConfig {
         {
           'name': 'firebase_messaging',
           'class': FirebaseMessagingNotificationProvider,
-        }
+        },
+        {
+          'name': 'clever_tap',
+          'class': CleverTapPushNotificationProvider,
+        },
+
       ],
     },
     'server_notification': {
