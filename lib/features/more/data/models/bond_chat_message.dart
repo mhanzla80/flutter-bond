@@ -29,6 +29,8 @@ class BondChatMessage extends Model with ChatMessageConvertible {
   @override
   ChatMessage toChatMessage() {
     return ChatMessage(
+      id: -1,
+      chatBotId: -1,
       content: text,
       type: type,
       sender: sender,

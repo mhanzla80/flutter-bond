@@ -29,6 +29,7 @@ class BondChatApi extends ChatDataSource<BondChatMessage> {
   @override
   Future<ListResponse<BondChatMessage>> sendMessage(
     Map<String, dynamic> body,
+    int chatBotId,
   ) async {
     await Future.delayed(const Duration(seconds: 2)); // Simulate network delay
 

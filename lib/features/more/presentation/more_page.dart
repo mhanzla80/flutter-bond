@@ -47,7 +47,7 @@ class MorePage extends ConsumerWidget {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           // Send a message when the button is pressed
-          chatController.sendMessage();
+          chatController.sendMessage(chatBotId:1,);
         },
         child: const Icon(Icons.send),
       ),

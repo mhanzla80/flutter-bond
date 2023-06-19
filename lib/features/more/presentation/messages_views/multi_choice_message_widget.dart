@@ -47,6 +47,7 @@ class MultiChoiceMessageWidget extends ConsumerWidget {
     final chatController =
         ref.read(chatStateNotifierProvider.notifier).chatController;
     chatController.sendMessage(
+      chatBotId:1,
       body: {'message': 'You answered: $answer'},
     );
   }

@@ -58,6 +58,7 @@ class _StepperMessageWidgetState extends ConsumerState<StepperMessageWidget> {
     final chatController =
         ref.read(chatStateNotifierProvider.notifier).chatController;
     chatController.sendMessage(
+      chatBotId:1,
       body: {'message': 'You selected: $currentStep'},
     );
   }
