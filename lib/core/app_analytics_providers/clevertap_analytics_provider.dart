@@ -1,4 +1,3 @@
-import 'package:bond/core/app_analytics.dart';
 import 'package:bond_core/core.dart';
 import 'package:clevertap_plugin/clevertap_plugin.dart';
 import 'package:flutter/cupertino.dart';

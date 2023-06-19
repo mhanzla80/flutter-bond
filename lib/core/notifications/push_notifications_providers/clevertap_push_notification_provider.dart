@@ -5,11 +5,6 @@ class CleverTapPushNotificationProvider extends PushNotificationProvider{
   // TODO: implement apnsToken
   Future<String?> get apnsToken => throw UnimplementedError();
 
-  @override
-  Future<void> deleteToken() {
-    // TODO: implement deleteToken
-    throw UnimplementedError();
-  }
 
   @override
   // TODO: implement initialNotification
@@ -30,5 +25,11 @@ class CleverTapPushNotificationProvider extends PushNotificationProvider{
   @override
   // TODO: implement token
   Future<String?> get token => throw UnimplementedError();
+
+  @override
+  Future<void> deleteToken() {
+    // TODO: implement deleteToken
+    throw UnimplementedError();
+  }
 
 }
