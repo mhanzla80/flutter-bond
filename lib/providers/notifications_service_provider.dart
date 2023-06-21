@@ -1,9 +1,11 @@
 import 'dart:core';
 
 import 'package:bond/core/app_notification_providers.dart';
+import 'package:bond/core/notifications/push_notifications_providers/clevertap_push_notification_provider.dart';
+import 'package:bond_core/core.dart';
+import 'package:clevertap_plugin/clevertap_plugin.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:get_it/get_it.dart';
-import 'package:bond_core/core.dart';
 
 import '../config/notification.dart';
 
@@ -51,8 +53,20 @@ class NotificationsServiceProvider extends ServiceProvider {
             instanceName: channelName,
           );
           break;
+        case 'clever_tap':
+          it.registerLazySingleton<MarketingNotificationProvider>(
+            () => CleverTapPushNotificationProvider(
+              CleverTapPlugin(),
+            ),
+            instanceName: channelName,
+          );
+          break;
       }
     }
+
+    sl<MarketingNotificationProvider>(instanceName: 'clever_tap').onPushNotification.listen((event) {
+
+    });
   }
 
   void _registerServerNotification(

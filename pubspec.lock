@@ -78,7 +78,7 @@ packages:
     description:
       path: "."
       ref: main
-      resolved-ref: "0f672b3b8449e50c41691b34e133bedbbc07ccc2"
+      resolved-ref: "09add89f15f0ab3d5b13c45ff2b2682094ec2da6"
       url: "https://github.com/onestudio-co/bond-core.git"
     source: git
     version: "0.0.1"
@@ -1280,10 +1280,10 @@ packages:
     dependency: transitive
     description:
       name: win32
-      sha256: "7dacfda1edcca378031db9905ad7d7bd56b29fd1a90b0908b71a52a12c41e36b"
+      sha256: "1414f27dd781737e51afa9711f2ac2ace6ab4498ee98e20863fa5505aa00c58c"
       url: "https://pub.dev"
     source: hosted
-    version: "5.0.3"
+    version: "5.0.4"
   xdg_directories:
     dependency: transitive
     description:
