@@ -8,31 +8,12 @@ import android.app.NotificationManager
 
 import android.os.Bundle
 
-class MainActivity : FlutterActivity(), PushPermissionResponseListener {
+class MainActivity : FlutterActivity() {
     var cleverTapDefaultInstance: CleverTapAPI? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         cleverTapDefaultInstance = CleverTapAPI.getDefaultInstance(this)
-        cleverTapDefaultInstance?.registerPushPermissionNotificationResponseListener(this)
-    }
-
-    override fun onPushPermissionResponse(accepted: Boolean) {
-        if (accepted) {
-            CleverTapAPI.createNotificationChannel(
-                    getApplicationContext(),
-                    "famcare_ct",
-                    "Famcare Marketing",
-                    "Famcare Marketing Channel for CleverTap",
-                    NotificationManager.IMPORTANCE_HIGH,
-                    true
-            );
-        }
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        cleverTapDefaultInstance?.unregisterPushPermissionNotificationResponseListener(this)
     }
 
     override fun onNewIntent(intent: Intent) {
